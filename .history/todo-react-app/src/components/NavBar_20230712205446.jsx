@@ -1,0 +1,28 @@
+import { useState } from "react";
+import Navbar from "./NavBar"
+
+const Navbar = () => {
+  const [dropdown, setDropdown] = useState(false)
+  console.log(useState(false));
+  return (
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>
+          <button onClick={setDropdown((prev) => !prev)}>
+          Service <span>&#8595</span>
+          </button>
+          {dropdown && (
+            <ul>
+            <li>Design</li>
+            <li>Development</li>
+          </ul>
+          )}
+          
+        </li>
+      </ul>
+    </nav>
+  );
+};
+export default Navbar;
